@@ -600,7 +600,30 @@ svg {
   max-height: 400px;
 }
 
-
+ .dark-mode {
+      background: linear-gradient(135deg, #1f1f1f, #2d2d2d);
+      color: #f0f0f0;
+    }
+    .dark-mode .content-section h2,
+    .dark-mode .payment-section h2,
+    .dark-mode .chart-section h2,
+    .dark-mode .motivational-quote,
+    .dark-mode .stats-section h2 {
+      color: #ffffff;
+    }
+    .dark-mode .student-card,
+    .dark-mode .payment-card,
+    .dark-mode .stat-card,
+    .dark-mode .chart-section {
+      background: rgba(0, 0, 0, 0.3);
+      color: #f0f0f0;
+    }
+    .dark-mode .bar {
+      background: #00ffe0;
+    }
+    .dark-mode .loader-text {
+      color: #00ffe0;
+    }
 
 
 
