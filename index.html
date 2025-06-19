@@ -8,7 +8,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body class="no-scroll delay-intro">
-   <button onclick="toggleDarkMode()" style="position: fixed; top: 20px; right: 20px; z-index: 9999; padding: 10px 16px; background: #00ffe0; color: #000; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">Toggle Dark Mode</button>
+  <nav class="navbar" id="navbar">
+  <div class="nav-logo">
+    <img src="./assets/logo skillNOva.jpeg" alt="SkillNova Logo" />
+    <span>SkillNova</span>
+  </div>
+  <ul class="nav-links">
+  <li><a href="#">Home</a></li>
+  <li><a href="#scroll-track">Success</a></li>
+  <li><a href="#studentChart">Stats</a></li>
+  <li><a href="#ripple-quote">Quote</a></li>
+  <li><a href="#payment">Pricing</a></li> <!-- fixed -->
+  <li><a href="#contact">Contact</a></li> <!-- fixed -->
+</ul>
+
+  <button onclick="toggleDarkMode()" class="dark-mode-btn">Toggle Dark Mode</button>
+</nav>
+
+
  <div class="loader-wrapper">
   <div class="loader">
     <div class="bars">
@@ -91,7 +108,7 @@
 
     </div>
   
-  <div class="payment-section">
+  <div class="payment-section" id="payment">
   <h2>Upgrade Your Learning</h2>
   <div class="payment-cards">
     <div class="payment-card">
@@ -163,16 +180,20 @@
     }, { passive: false });
 
     setTimeout(() => {
-      loaderWrapper.classList.add('hide');
-      body.classList.remove('delay-intro');
+  loaderWrapper.classList.add('hide');
+  body.classList.remove('delay-intro');
 
-      setTimeout(() => {
-        body.classList.remove('no-scroll');
-        const quote = document.querySelector('.motivational-quote');
-        quote.classList.add('show');
-        enableTextRipple();
-      }, 2000);
-    }, 2000);
+  setTimeout(() => {
+    body.classList.remove('no-scroll');
+    const quote = document.querySelector('.motivational-quote');
+    quote.classList.add('show');
+
+    const navbar = document.getElementById('navbar');
+    navbar.classList.add('show'); // 👈 Fade in the navbar
+
+    enableTextRipple();
+  }, 2000);
+}, 2000);
   };
 
   function enableTextRipple() {
