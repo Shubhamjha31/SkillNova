@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkillNova</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="no-scroll delay-intro">
+ <div class="loader-wrapper">
+  <div class="loader">
+    <div class="bars">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <h1 class="loader-text">Preparing Awesomeness...</h1>
+  </div>
+</div>
+
+
+  <div class="intro-container">
+    <h1 class="intro-text-left">Hello</h1>
+    <h1 class="intro-text-right">Students</h1>
+  </div>
+
+  
+
+  <div class="main-section">
+  <div class="content-section">
+    <h2>Success Stories</h2>
+    <div class="card-track" id="scroll-track">
+      <div class="student-card">
+        <div class="pulse-ring"></div>
+        <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e" alt="Riya Sharma" />
+        <h3>Riya Sharma</h3>
+        <div class="role">Software Engineer at Google</div>
+        <p>After completing our full-stack program, Riya secured a top role at Google. She’s now building scalable apps for millions of users.</p>
+      </div>
+
+      <div class="student-card">
+        <div class="pulse-ring"></div>
+        <img src=data:image/jpeg;base64,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 alt="Akash Mehta" />
+        <h3>Akash Mehta</h3>
+        <div class="role">M.Tech Student, IIT Bombay</div>
+        <p>With our structured GATE prep, Akash scored top AIR and is now pursuing M.Tech in AI at IIT Bombay.</p>
+      </div>
+
+      <div class="student-card">
+        <div class="pulse-ring"></div>
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2" alt="Neha Jain" />
+        <h3>Neha Jain</h3>
+        <div class="role">Founder, EdTech Startup</div>
+        <p>Neha combined her passion for teaching and technology to launch her own online learning platform.</p>
+      </div>
+
+      <div class="student-card">
+        <div class="pulse-ring"></div>
+        <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12" alt="Rahul Singh" />
+        <h3>Rahul Singh</h3>
+        <div class="role">Intern, Microsoft</div>
+        <p>Rahul built strong dev skills and cracked interviews to intern at Microsoft with our interview prep help.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="chart-section">
+  <h2>Student Progress Statistics</h2>
+  <canvas id="studentChart"></canvas>
+</div>
+
+
+
+
+  <div class="motivational-quote">
+      <h1 class="quote-text" id="ripple-quote">
+  <span>B</span><span>e</span><span>&nbsp;</span>
+  <span>s</span><span>o</span><span>&nbsp;</span>
+  <span>g</span><span>o</span><span>o</span><span>d</span><span>&nbsp;</span>
+  <span>t</span><span>h</span><span>a</span><span>t</span><span>&nbsp;</span>
+  <span>t</span><span>h</span><span>e</span><span>&nbsp;</span>
+  <span>w</span><span>o</span><span>r</span><span>l</span><span>d</span><span>&nbsp;</span>
+  <span>c</span><span>a</span><span>n</span><span>’</span><span>t</span><span>&nbsp;</span>
+  <span>i</span><span>g</span><span>n</span><span>o</span><span>r</span><span>e</span><span>&nbsp;</span>
+  <span>y</span><span>o</span><span>u</span><span>.</span>
+</h1>
+
+    </div>
+  
+  <div class="payment-section">
+  <h2>Upgrade Your Learning</h2>
+  <div class="payment-cards">
+    <div class="payment-card">
+      <h3>Starter - ₹499</h3>
+      <ul>
+        <li>Access to beginner courses</li>
+        <li>Community Support</li>
+        <li>Weekly Webinars</li>
+      </ul>
+      <button>Buy Now</button>
+    </div>
+
+    <div class="payment-card highlight">
+      <h3>Pro - ₹999</h3>
+      <ul>
+        <li>All Starter features</li>
+        <li>1:1 Mentorship</li>
+        <li>Resume & Interview Prep</li>
+        <li>Certificate of Completion</li>
+      </ul>
+      <button>Buy Now</button>
+    </div>
+
+    <div class="payment-card">
+      <h3>Elite - ₹1499</h3>
+      <ul>
+        <li>All Pro features</li>
+        <li>Job Referral Support</li>
+        <li>Personalized Career Guidance</li>
+      </ul>
+      <button>Buy Now</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  window.onload = function () {
+    const body = document.body;
+    const loaderWrapper = document.querySelector('.loader-wrapper');
+    const track = document.getElementById('scroll-track');
+
+    track.addEventListener('wheel', function (e) {
+      e.preventDefault();
+      track.scrollLeft += e.deltaY;
+    }, { passive: false });
+
+    setTimeout(() => {
+      loaderWrapper.classList.add('hide');
+      body.classList.remove('delay-intro');
+
+      setTimeout(() => {
+        body.classList.remove('no-scroll');
+        const quote = document.querySelector('.motivational-quote');
+        quote.classList.add('show');
+        enableTextRipple();
+      }, 2000);
+    }, 2000);
+  };
+
+  function enableTextRipple() {
+    const quote = document.getElementById("ripple-quote");
+    const spans = quote.querySelectorAll("span");
+
+    quote.addEventListener("mousemove", (e) => {
+      const rect = quote.getBoundingClientRect();
+      const mouseX = e.clientX - rect.left;
+      const mouseY = e.clientY - rect.top;
+
+      spans.forEach(span => {
+        const spanRect = span.getBoundingClientRect();
+        const spanX = spanRect.left + spanRect.width / 2 - rect.left;
+        const spanY = spanRect.top + spanRect.height / 2 - rect.top;
+
+        const dx = spanX - mouseX;
+        const dy = spanY - mouseY;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        const maxDist = 150;
+        const strength = Math.max((maxDist - dist) / maxDist, 0);
+
+        const moveX = dx * strength * 0.4;
+        const moveY = dy * strength * 0.4;
+
+        span.style.transform = `translate(${moveX}px, ${moveY}px)`;
+      });
+    });
+
+    quote.addEventListener("mouseleave", () => {
+      spans.forEach(span => {
+        span.style.transform = `translate(0, 0)`;
+      });
+    });
+  }
+  const ctx = document.getElementById('studentChart').getContext('2d');
+  const studentChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Job Readiness', 'Interview Confidence', 'Technical Skills', 'Soft Skills', 'Placement Rate'],
+      datasets: [{
+        label: '% Improvement After Joining',
+        data: [92, 87, 94, 81, 89],
+        backgroundColor: 'rgba(0, 255, 224, 0.6)',
+        borderColor: 'rgba(0, 255, 224, 1)',
+        borderWidth: 2,
+        borderRadius: 10,
+      }]
+    },
+    options: {
+      responsive: true,
+      scales: {
+        y: {
+          beginAtZero: true,
+          max: 100,
+          ticks: {
+            color: '#ffffff',
+            font: {
+              size: 14
+            }
+          },
+          grid: {
+            color: 'rgba(255,255,255,0.1)'
+          }
+        },
+        x: {
+          ticks: {
+            color: '#ffffff',
+            font: {
+              size: 14
+            }
+          },
+          grid: {
+            color: 'rgba(255,255,255,0.1)'
+          }
+        }
+      },
+      plugins: {
+        legend: {
+          labels: {
+            color: '#ffffff'
+          }
+        },
+        tooltip: {
+          backgroundColor: '#00ffe0',
+          titleColor: '#000',
+          bodyColor: '#000'
+        }
+      }
+    }
+  });
+</script>
+
+<svg>
+  <filter id="ripple-filter">
+    <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="2" result="noise" />
+    <feDisplacementMap in="SourceGraphic" in2="noise" scale="20" xChannelSelector="R" yChannelSelector="G" />
+  </filter>
+</svg>
+
+
+
+
+
+
+</body>
+</html>

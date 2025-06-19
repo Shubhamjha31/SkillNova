@@ -1,0 +1,606 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2, #6ee7b7);
+  background-size: 400% 400%;
+  animation: gradientShift 10s ease infinite;
+  min-height: 100vh;
+  overflow: hidden; /* hide scroll during transition */
+  color: white;
+  position: relative;
+}
+
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.intro-container {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+
+.intro-text-left,
+.intro-text-right {
+  font-size: 4rem;
+  font-weight: 700;
+  opacity: 1;
+}
+
+.intro-container,
+.intro-text-left,
+.intro-text-right {
+  animation-play-state: paused;
+}
+
+.intro-text-left {
+  animation-name: slideLeft;
+}
+
+.intro-text-right {
+  animation-name: slideRight;
+}
+
+@keyframes slideLeft {
+  0% { transform: translateX(0); opacity: 1; }
+  100% { transform: translateX(-150%); opacity: 0; }
+}
+
+@keyframes slideRight {
+  0% { transform: translateX(0); opacity: 1; }
+  100% { transform: translateX(150%); opacity: 0; }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; visibility: hidden; }
+}
+
+.content-section {
+  opacity: 1;
+  transform: none;
+  animation: none;
+  padding: 50px 30px;
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+  align-self: center;
+}
+
+.card-track {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 10px;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+}
+
+.card-track::-webkit-scrollbar {
+  height: 6px;
+}
+.card-track::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+}
+
+.student-card {
+  flex: 0 0 auto;
+  width: 280px;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(14px);
+  border-radius: 16px;
+  padding: 20px;
+  scroll-snap-align: start;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+  color: white;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.student-card:hover {
+  transform: scale(1.05);
+}
+
+.student-card img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+.student-card h3 {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.student-card .role {
+  font-size: 0.95rem;
+  color: #c0ffef;
+  font-style: italic;
+}
+
+.student-card p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.payment-section {
+  width: 100%;
+  max-width: 1000px;
+  margin: 80px auto;
+  text-align: center;
+  color: white;
+}
+
+.payment-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  /* REMOVE this line: */
+  /* animation: fadeInDown 1s ease-out; */
+}
+
+
+.payment-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.payment-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 25px 20px;
+  width: 280px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  animation: fadeInUp 1s ease both;
+}
+
+.payment-card:hover {
+  transform: translateY(-10px) scale(1.03);
+}
+
+.payment-card h3 {
+  font-size: 1.5rem;
+  color: #a0ffe0;
+  margin-bottom: 15px;
+}
+
+.payment-card ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.payment-card ul li {
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.payment-card button {
+  background-color: #00e1d4;
+  color: #000;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.payment-card button:hover {
+  background-color: #00c4b8;
+}
+
+.payment-card.highlight {
+  border: 2px solid #00ffe0;
+  box-shadow: 0 0 15px #00ffe0;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.main-section {
+  opacity: 0;
+  transform: translateY(100px);
+  animation: fadeInUp 1.5s forwards;
+  animation-delay: 4s; /* Starts after intro fully fades out */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 80px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+
+
+body {
+  overflow-y: auto;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+.student-card:hover,
+.payment-card:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4), 0 0 40px rgba(0, 255, 255, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+.student-card,
+.payment-card {
+  position: relative; /* Needed for ripple */
+  overflow: hidden;   /* Hide ripple overflow */
+}
+
+.pulse-ring {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  top: -10%;
+  left: -10%;
+  border-radius: 50%;
+  background: rgba(0, 255, 255, 0.2);
+  animation: pulse 2s infinite ease-out;
+  z-index: 0;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+.student-card *:not(.pulse-ring),
+.payment-card *:not(.pulse-ring) {
+  position: relative;
+  z-index: 1;
+}
+
+.loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #1f1f1f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.bars {
+  display: flex;
+  gap: 8px;
+}
+
+.bar {
+  width: 10px;
+  height: 60px;
+  background: #00ffe0;
+  animation: bounceBar 1s infinite ease-in-out;
+  border-radius: 4px;
+}
+
+.bar:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.bar:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.bar:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.bar:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounceBar {
+  0%, 100% {
+    transform: scaleY(0.3);
+  }
+  50% {
+    transform: scaleY(1.1);
+  }
+}
+
+.loader-text {
+  color: #00ffe0;
+  font-size: 1.6rem;
+  font-weight: bold;
+  animation: flicker 2s infinite;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+@keyframes flicker {
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+    opacity: 1;
+  }
+  20%, 24%, 55% {
+    opacity: 0.3;
+  }
+}
+
+.loader-wrapper.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+body:not(.delay-intro) .intro-container {
+  animation: fadeOut 2s forwards;
+  animation-delay: 2s;
+  animation-play-state: running;
+}
+
+body:not(.delay-intro) .intro-text-left {
+  animation: slideLeft 2s forwards;
+  animation-delay: 1s;
+  animation-play-state: running;
+}
+
+body:not(.delay-intro) .intro-text-right {
+  animation: slideRight 2s forwards;
+  animation-delay: 1s;
+  animation-play-state: running;
+}
+
+#ripple-canvas {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.motivational-quote {
+  position: relative;
+  top: auto;
+  left: auto;
+  transform: none;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 0 20px #00ffe0, 0 0 40px #00ffe0;
+  opacity: 0;
+  text-align: center;
+  margin: 40px auto;
+  max-width: 1000px;
+  transition: opacity 1s ease, transform 1s ease;
+  z-index: 1;
+}
+
+
+.motivational-quote.show {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.quote-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  color: #ffffff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow:
+    0 0 8px rgba(0, 255, 255, 0.5),
+    0 0 16px rgba(0, 255, 255, 0.3),
+    0 0 24px rgba(0, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+
+.motivational-quote {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 60px auto 40px;
+  padding: 0 20px;
+  max-width: 800px;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+
+.motivational-quote.show {
+  opacity: 1;
+  transform: none;
+}
+
+.motivational-quote.show {
+  opacity: 1;
+  transform: none;
+}
+
+
+svg {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.quote-text span {
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.quote-text span:hover {
+  transform: translateY(-6px) scale(1.05);
+  color: #00ffe0;
+  text-shadow:
+    0 0 10px #00ffe0,
+    0 0 20px #00ffe0;
+}
+
+.stats-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 60px auto;
+  text-align: center;
+  color: white;
+  padding: 20px 30px;
+}
+
+.stats-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+.stat-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 30px 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  width: 100%;
+}
+
+.stat-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+.stat-card h3 {
+  font-size: 2.5rem;
+  color: #00ffe0;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.stat-card p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #e0f7f5;
+}
+
+.chart-section {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.chart-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+#studentChart {
+  width: 100% !important;
+  max-height: 400px;
+}
+
+
+
+
+
